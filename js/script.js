@@ -1,5 +1,5 @@
 document.addEventListener( "DOMContentLoaded", function() {
-    const API_ROOT = "https://en.wikipedia.org/w/api.php",
+    const API_ROOT = "https://www.mediawiki.org/w/api.php",
           API_SUFFIX = "&format=json&callback=?&continue=",
           EDIT_COUNT_THRESHOLD = 10000;
 
@@ -114,13 +114,13 @@ document.addEventListener( "DOMContentLoaded", function() {
     function makeUserCell ( username ) {
         var encUsername = encodeURIComponent( username ).replace( "'", "%27" ),
             escQuotUsername = username.replace( "'", "&#39" );
-        return "<td><a href='https://en.wikipedia.org/wiki/User:" + encUsername +
-            "' title='Wikipedia user page of " + escQuotUsername + "'>" +
-            username + "</a> (<a href='https://en.wikipedia.org/wiki/User talk:" +
-            encUsername + "' title='Wikipedia user talk page of " +
+        return "<td><a href='https://www.mediawiki.org/wiki/User:" + encUsername +
+            "' title='MediaWiki user page of " + escQuotUsername + "'>" +
+            username + "</a> (<a href='https://www.mediawiki.org/wiki/User talk:" +
+            encUsername + "' title='MediaWiki user talk page of " +
             escQuotUsername + "'>talk</a> &middot; <a " +
-            "href='https://en.wikipedia.org/wiki/Special:Contributions/" +
-            encUsername + "' title='Wikipedia contributions of " +
+            "href='https://www.mediawiki.org/wiki/Special:Contributions/" +
+            encUsername + "' title='MediaWiki contributions of " +
             escQuotUsername + "'>contribs</a>)</td>";
     }
 
@@ -135,7 +135,10 @@ document.addEventListener( "DOMContentLoaded", function() {
             var name = "_jsonp_" + unique;
             if (url.match(/\?/)) url += "&callback="+name;
             else url += "?callback="+name;
-            var script = document.createElement('script');
+            var script = docum
+            
+            
+            t.createElement('script');
             script.type = 'text/javascript';
             script.src = url;
             script.onerror = function() { reject(); };
